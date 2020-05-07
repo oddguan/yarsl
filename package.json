@@ -39,7 +39,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint ./src --ext .js,.jsx,.ts,.tsx --fix",
-    "prepublish": "npm run build"
+    "prepublish": "npm run test:nowatch && npm run lint && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -81,5 +81,11 @@
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "ts-jest": "^25.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test:nowatch",
+      "pre-push": "npm run lint && npm run test:nowatch"
+    }
   }
 }
