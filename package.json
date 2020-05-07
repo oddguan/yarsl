@@ -41,7 +41,7 @@
     "start": "react-scripts start",
     "clean": "rimraf ./dist",
     "build": "npm run clean && npm run build-ts && npm run build-css",
-    "build-ts": "tsc -p tsconfig.build.json",
+    "build-ts": "tsc -p tsconfig.prod.json",
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "test": "react-scripts test",
     "test:nowatch": "cross-env CI=true react-scripts test",
