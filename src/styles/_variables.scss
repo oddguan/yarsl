@@ -1,3 +1,4 @@
+// base colors
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -10,12 +11,17 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
 
+// color palette
 $blue: #0b60ff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
 $green: #269a35 !default;
+$pink: #d63384 !default;
 $red: #d11e35 !default;
 $yellow: #feb60d !default;
 $cyan: #1b91a9 !default;
 
+// styling variables
 $primary: $blue !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
@@ -24,3 +30,50 @@ $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
+
+// fonts
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+// font sizes
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+$font-size-root: null !default;
+
+// font weights
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+$font-weight-base: $font-weight-normal !default;
+
+// line heights
+$line-height-base: 1.5 !default;
+$line-height-lg: 2 !default;
+$line-height-sm: 1.25 !default;
+
+// heading sizes
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+// links
+$link-color: $primary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// body
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
+$body-text-align: null !default;
+
+// spacing
+$spacer: 1rem !default;
