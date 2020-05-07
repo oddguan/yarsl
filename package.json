@@ -1,6 +1,6 @@
 {
   "name": "yarsl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Yet Another React Styling Library",
   "author": "Chenxiao Guan",
@@ -22,20 +22,11 @@
     "dist"
   ],
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/classnames": "^2.2.10",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.38",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.7",
-    "classnames": "^2.2.6",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typescript": "^3.7.5"
+    "classnames": "^2.2.6"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -66,6 +57,19 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.38",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "node-sass": "^4.14.1",
+    "react-scripts": "3.4.1",
+    "typescript": "^3.7.5",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
