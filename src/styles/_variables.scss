@@ -191,6 +191,15 @@ $btn-border-radius-sm: $border-radius-sm !default;
 $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
 
+// alert box
+$alert-padding-y: 1em !default;
+$alert-padding-x: 1.5em !default;
+$alert-border-radius: $border-radius !default;
+$alert-content-font-size: $font-size-sm !default;
+$alert-content-font-weight: $font-weight-light !default;
+$alert-title-font-size: $font-size-lg !default;
+$alert-title-font-weight: $font-weight-bold !default;
+
 // 不同类型的 box shadow
 $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
 $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
