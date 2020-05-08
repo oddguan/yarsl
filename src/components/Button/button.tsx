@@ -22,11 +22,15 @@ interface BaseButtonProps {
   href?: string;
 }
 
-const Button: React.FC<BaseButtonProps> = (props: BaseButtonProps): React.ReactElement => {
-  const { btnType, disabled, size, children, href } = props;
+type NativeButtonProps = React.ButtonHTMLAttributes<HTMLElement> & BaseButtonProps;
+type AnchorButtonProps = React.AnchorHTMLAttributes<HTMLElement> & BaseButtonProps;
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+
+const Button: React.FC<ButtonProps> = (props: ButtonProps): React.ReactElement => {
+  const { btnType, className, disabled, size, children, href, ...restProps } = props;
 
   // btn, btn-lg, btn-primary
-  const classes = classNames('btn', {
+  const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
     disabled: btnType === ButtonType.Link && disabled,
@@ -35,7 +39,7 @@ const Button: React.FC<BaseButtonProps> = (props: BaseButtonProps): React.ReactE
   // if the button is a link type, return anchor tag
   if (btnType === ButtonType.Link && href) {
     return (
-      <a className={classes} href={href}>
+      <a className={classes} href={href} {...restProps}>
         {children}
       </a>
     );
@@ -43,7 +47,7 @@ const Button: React.FC<BaseButtonProps> = (props: BaseButtonProps): React.ReactE
 
   // if the button is a regular button type, return button tag
   return (
-    <button className={classes} disabled={disabled}>
+    <button className={classes} disabled={disabled} {...restProps}>
       {children}
     </button>
   );
