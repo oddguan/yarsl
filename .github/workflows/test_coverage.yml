@@ -1,0 +1,21 @@
+name: Collect Test Coverage to Codecov
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  collect-coverage:
+    name: collect test coverage and report to Codecov
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: install dependencies
+        run: npm install
+      - name: run npm test and collect coverage data
+        run: npm run test:nowatch -- --coverage
+      - uses: codecov/codecov-action@v1
+        with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage/clover.xml
