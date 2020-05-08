@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/oddguan/yarsl/static/css/main.7cc9460f.chunk.css",
+    "main.js": "/oddguan/yarsl/main.dd9a7170290c65c220b4.bundle.js",
+    "main.css.map": "/oddguan/yarsl/static/css/main.7cc9460f.chunk.css.map",
+    "main.js.map": "/oddguan/yarsl/main.dd9a7170290c65c220b4.bundle.js.map",
+    "runtime~main.js": "/oddguan/yarsl/runtime~main.dd9a7170290c65c220b4.bundle.js",
+    "runtime~main.js.map": "/oddguan/yarsl/runtime~main.dd9a7170290c65c220b4.bundle.js.map",
+    "vendors~main.css": "/oddguan/yarsl/static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.js": "/oddguan/yarsl/vendors~main.dd9a7170290c65c220b4.bundle.js",
+    "vendors~main.css.map": "/oddguan/yarsl/static/css/vendors~main.f8f248a5.chunk.css.map",
+    "vendors~main.js.map": "/oddguan/yarsl/vendors~main.dd9a7170290c65c220b4.bundle.js.map",
+    "iframe.html": "/oddguan/yarsl/iframe.html",
+    "precache-manifest.e41c9ec5cfd488588ff187e9bd7a1b0d.js": "/oddguan/yarsl/precache-manifest.e41c9ec5cfd488588ff187e9bd7a1b0d.js",
+    "service-worker.js": "/oddguan/yarsl/service-worker.js",
+    "vendors~main.dd9a7170290c65c220b4.bundle.js.LICENSE.txt": "/oddguan/yarsl/vendors~main.dd9a7170290c65c220b4.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.dd9a7170290c65c220b4.bundle.js",
+    "static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.dd9a7170290c65c220b4.bundle.js",
+    "static/css/main.7cc9460f.chunk.css",
+    "main.dd9a7170290c65c220b4.bundle.js"
+  ]
+}
