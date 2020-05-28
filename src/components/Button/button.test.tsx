@@ -11,13 +11,14 @@ describe('test Button Component', () => {
     };
     const buttonText = 'Default Button';
     const { getByText } = render(<Button {...propsWithOnClickMock}>{buttonText}</Button>);
-    const element = getByText(buttonText);
+    const element = getByText(buttonText) as HTMLButtonElement;
 
     expect(element).toBeInTheDocument();
+    expect(element.tagName).toBe('BUTTON');
+    expect(element.disabled).toBeFalsy();
     fireEvent.click(element);
     expect(onClickMock).toHaveBeenCalled();
-    expect(element.classList.contains('btn')).toBeTruthy();
-    expect(element.classList.contains('btn-primary')).toBeTruthy();
+    expect(element).toHaveClass('btn btn-primary');
   });
 
   it('should render link button using anchor tag', () => {
@@ -30,8 +31,37 @@ describe('test Button Component', () => {
     const element = getByText(buttonText);
 
     expect(element).toBeInTheDocument();
-    expect(element.tagName).toBe('a'.toUpperCase());
-    expect(element.classList.contains('btn')).toBeTruthy();
-    expect(element.classList.contains('btn-link')).toBeTruthy();
+    expect(element.tagName).toBe('A');
+    expect(element).toHaveClass('btn btn-link');
+  });
+
+  it('should render a disabled button', () => {
+    const buttonText = 'Disabled Button';
+    const disabledButtonProps: ButtonProps = {
+      disabled: true,
+      onClick: jest.fn(),
+    };
+    const { getByText } = render(<Button {...disabledButtonProps}>{buttonText}</Button>);
+    const element = getByText(buttonText) as HTMLButtonElement;
+
+    expect(element).toBeInTheDocument();
+    expect(element.disabled).toBeTruthy();
+    fireEvent.click(element);
+    expect(disabledButtonProps.onClick).not.toHaveBeenCalled();
+  });
+
+  it('should render a disabled link button', () => {
+    const linkText = 'Disabled Link Button';
+    const disabledLinkButtonProps: ButtonProps = {
+      disabled: true,
+      onClick: jest.fn(),
+      href: 'http://example.com',
+      btnType: ButtonType.Link,
+    };
+    const { getByText } = render(<Button {...disabledLinkButtonProps}>{linkText}</Button>);
+    const element = getByText(linkText);
+
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveClass('btn btn-link disabled');
   });
 });
