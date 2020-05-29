@@ -127,4 +127,37 @@ describe('test Menu component', () => {
     jest.runAllTimers();
     expect(submenu).not.toHaveClass('menu-opened');
   });
+
+  it('should listen to click event if the menu is vertical when submenu is clicked', () => {
+    const { getByText, getByTestId } = render(
+      <Menu mode='vertical'>
+        <Menu.SubMenu title='submenu'>
+          <Menu.Item>item1</Menu.Item>
+        </Menu.SubMenu>
+      </Menu>,
+    );
+    const submenuTitle = getByText('submenu');
+    const submenuParent = getByTestId('yarsl-submenu');
+    fireEvent.click(submenuTitle);
+    expect(submenuParent).toBeInTheDocument();
+    expect(submenuParent).toHaveClass('menu-opened');
+  });
+
+  it('should console.error if the submenu contains elements other than Menu.Item', () => {
+    const consoleErrorMock = jest.fn();
+    console.error = consoleErrorMock;
+
+    const { queryByText } = render(
+      <Menu>
+        <Menu.SubMenu title='submenu'>
+          <div>item1</div>
+        </Menu.SubMenu>
+      </Menu>,
+    );
+
+    const item1 = queryByText('item1');
+    expect(item1).not.toBeInTheDocument();
+    expect(consoleErrorMock).toBeCalledTimes(1);
+    expect(consoleErrorMock).toBeCalledWith('Error: SubMenu has a child which is not a MenuItem component.');
+  });
 });
