@@ -61,7 +61,11 @@ const SubMenu: React.FC<SubMenuProps> = ({
         console.error('Error: SubMenu has a child which is not a MenuItem component.');
       }
     });
-    return <ul className={subMenuClasses}>{mappedChildren}</ul>;
+    return (
+      <ul className={subMenuClasses} data-testid='yarsl-submenu'>
+        {mappedChildren}
+      </ul>
+    );
   };
 
   return (
