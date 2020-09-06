@@ -1,27 +1,28 @@
 import React from 'react';
-import Alert, { AlertType } from './components/Alert/alert';
+import Menu from './components/Menu/menu';
 
 function App(): React.ReactElement {
   return (
     <>
       <div style={{ width: '700px' }}>
-        <Alert>This is a default alert</Alert>
-        <br />
-        <Alert alertType={AlertType.Danger} nonClosable>
-          This is a danger alert and cannot be closed
-        </Alert>
-        <br />
-        <Alert alertType={AlertType.Warning}>
-          <Alert.Title>Warning Title</Alert.Title>
-          <span>This is the warning alert content. Hello World!</span>
-          <br />
-          <span>Hello from another paragraph.</span>
-        </Alert>
-        <br />
-        <Alert alertType={AlertType.Success}>
-          <Alert.Title>The action was successful!</Alert.Title>
-          <span>Your action was successfully received. Clicked the close button to close this alert.</span>
-        </Alert>
+        <Menu>
+          <Menu.Item>menu item 1</Menu.Item>
+          <Menu.Item disabled>menu item 2</Menu.Item>
+          <Menu.Item>menu item 3</Menu.Item>
+          <Menu.SubMenu title='submenu item 4'>
+            <Menu.Item>sub-item 1</Menu.Item>
+            <Menu.Item>sub-item 2</Menu.Item>
+          </Menu.SubMenu>
+        </Menu>
+        <Menu mode='vertical'>
+          <Menu.Item>menu item 1</Menu.Item>
+          <Menu.Item disabled>menu item 2</Menu.Item>
+          <Menu.Item>menu item 3</Menu.Item>
+          <Menu.SubMenu title='submenu item 4' defaultOpen={false}>
+            <Menu.Item>sub-item 1</Menu.Item>
+            <Menu.Item>sub-item 2</Menu.Item>
+          </Menu.SubMenu>
+        </Menu>
       </div>
     </>
   );
