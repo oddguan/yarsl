@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/oddguan/yarsl/static/css/main.85d01e83.chunk.css",
-    "main.js": "/oddguan/yarsl/main.20c6af9be093683d25ef.bundle.js",
+    "main.js": "/oddguan/yarsl/main.0c0419c1740b6506238e.bundle.js",
     "main.css.map": "/oddguan/yarsl/static/css/main.85d01e83.chunk.css.map",
-    "main.js.map": "/oddguan/yarsl/main.20c6af9be093683d25ef.bundle.js.map",
-    "runtime~main.js": "/oddguan/yarsl/runtime~main.20c6af9be093683d25ef.bundle.js",
-    "runtime~main.js.map": "/oddguan/yarsl/runtime~main.20c6af9be093683d25ef.bundle.js.map",
+    "main.js.map": "/oddguan/yarsl/main.0c0419c1740b6506238e.bundle.js.map",
+    "runtime~main.js": "/oddguan/yarsl/runtime~main.0c0419c1740b6506238e.bundle.js",
+    "runtime~main.js.map": "/oddguan/yarsl/runtime~main.0c0419c1740b6506238e.bundle.js.map",
     "vendors~main.css": "/oddguan/yarsl/static/css/vendors~main.f8f248a5.chunk.css",
-    "vendors~main.js": "/oddguan/yarsl/vendors~main.20c6af9be093683d25ef.bundle.js",
+    "vendors~main.js": "/oddguan/yarsl/vendors~main.0c0419c1740b6506238e.bundle.js",
     "vendors~main.css.map": "/oddguan/yarsl/static/css/vendors~main.f8f248a5.chunk.css.map",
-    "vendors~main.js.map": "/oddguan/yarsl/vendors~main.20c6af9be093683d25ef.bundle.js.map",
+    "vendors~main.js.map": "/oddguan/yarsl/vendors~main.0c0419c1740b6506238e.bundle.js.map",
     "iframe.html": "/oddguan/yarsl/iframe.html",
-    "precache-manifest.e22c63b3be5d6d22de85781a32679d66.js": "/oddguan/yarsl/precache-manifest.e22c63b3be5d6d22de85781a32679d66.js",
+    "precache-manifest.2fa69cb94c4080ff0661aa926dc1a46f.js": "/oddguan/yarsl/precache-manifest.2fa69cb94c4080ff0661aa926dc1a46f.js",
     "service-worker.js": "/oddguan/yarsl/service-worker.js",
-    "vendors~main.20c6af9be093683d25ef.bundle.js.LICENSE.txt": "/oddguan/yarsl/vendors~main.20c6af9be093683d25ef.bundle.js.LICENSE.txt"
+    "vendors~main.0c0419c1740b6506238e.bundle.js.LICENSE.txt": "/oddguan/yarsl/vendors~main.0c0419c1740b6506238e.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.20c6af9be093683d25ef.bundle.js",
+    "runtime~main.0c0419c1740b6506238e.bundle.js",
     "static/css/vendors~main.f8f248a5.chunk.css",
-    "vendors~main.20c6af9be093683d25ef.bundle.js",
+    "vendors~main.0c0419c1740b6506238e.bundle.js",
     "static/css/main.85d01e83.chunk.css",
-    "main.20c6af9be093683d25ef.bundle.js"
+    "main.0c0419c1740b6506238e.bundle.js"
   ]
 }
