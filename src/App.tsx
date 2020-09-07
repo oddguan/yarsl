@@ -1,34 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import Menu from './components/Menu/menu';
-import Icon from './components/Icon/icon';
+import Transition from './components/Transition/transition';
+import Button from './components/Button/button';
 library.add(fas);
 
 function App(): React.ReactElement {
+  const [show, setShow] = useState(false);
   return (
     <>
-      <Icon icon='coffee' theme='primary' size='10x' />
-      <div style={{ width: '700px' }}>
-        <Menu>
-          <Menu.Item>menu item 1</Menu.Item>
-          <Menu.Item disabled>menu item 2</Menu.Item>
-          <Menu.Item>menu item 3</Menu.Item>
-          <Menu.SubMenu title='submenu item 4'>
-            <Menu.Item>sub-item 1</Menu.Item>
-            <Menu.Item>sub-item 2</Menu.Item>
-          </Menu.SubMenu>
-        </Menu>
-        <Menu mode='vertical'>
-          <Menu.Item>menu item 1</Menu.Item>
-          <Menu.Item disabled>menu item 2</Menu.Item>
-          <Menu.Item>menu item 3</Menu.Item>
-          <Menu.SubMenu title='submenu item 4' defaultOpen={false}>
-            <Menu.Item>sub-item 1</Menu.Item>
-            <Menu.Item>sub-item 2</Menu.Item>
-          </Menu.SubMenu>
-        </Menu>
-      </div>
+      <Button onClick={(): void => setShow(!show)}>button1</Button>
+      <Transition in={show} animation='zoom-in-top' timeout={300}>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ratione doloribus nemo veniam adipisci quos
+            voluptas quo, repudiandae assumenda provident suscipit omnis, quis veritatis. Eligendi culpa quae voluptate
+            ducimus inventore.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ratione doloribus nemo veniam adipisci quos
+            voluptas quo, repudiandae assumenda provident suscipit omnis, quis veritatis. Eligendi culpa quae voluptate
+            ducimus inventore.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ratione doloribus nemo veniam adipisci quos
+            voluptas quo, repudiandae assumenda provident suscipit omnis, quis veritatis. Eligendi culpa quae voluptate
+            ducimus inventore.
+          </p>
+          <Button>test button</Button>
+        </div>
+      </Transition>
     </>
   );
 }
