@@ -40,7 +40,3 @@
 .alert-warning {
   @include alert-style($warning, $warning, $black);
 }
-
-.alert-hidden {
-  display: none;
-}

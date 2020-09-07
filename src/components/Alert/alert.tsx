@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
-import AlertTitle from './alertTitle';
 
-export enum AlertType {
-  Success = 'success',
-  Default = 'default',
-  Danger = 'danger',
-  Warning = 'warning',
-}
+import AlertTitle from './alertTitle';
+import Icon from '../Icon/icon';
+import Transition from '../Transition/transition';
+
+export type AlertType = 'success' | 'default' | 'danger' | 'warning';
 
 export interface BaseAlertProps {
   alertType?: AlertType;
@@ -25,31 +24,34 @@ const Alert: AlertComponent<AlertProps> = (props: AlertProps): React.ReactElemen
 
   // a boolean state indicating whether the alert box is open
   const [open, setOpen] = useState(true);
-  // classes when alert box is open
-  const openClasses = classNames('alert', className, {
+  const classes = classNames('alert', className, {
     [`alert-${alertType}`]: alertType,
   });
-  // classes when alert box is closed
-  const closeClasses = 'alert-hidden';
 
   const handleCloseClick = (): void => {
     setOpen(false);
   };
 
   return (
-    <div className={open ? openClasses : closeClasses} {...restProps}>
-      <div className='alert-content'>{children}</div>
-      {!nonClosable && (
-        <span onClick={handleCloseClick} className='alert-close-btn'>
-          close
-        </span>
-      )}
-    </div>
+    <Transition in={open} timeout={300} animation='zoom-in-top'>
+      <div className={classes} {...restProps}>
+        <div className='alert-content'>{children}</div>
+        {!nonClosable && (
+          <Icon
+            data-testid='alert-close-btn'
+            className='alert-close-btn'
+            icon={faTimes}
+            size='sm'
+            onClick={handleCloseClick}
+          />
+        )}
+      </div>
+    </Transition>
   );
 };
 
 Alert.defaultProps = {
-  alertType: AlertType.Default,
+  alertType: 'default',
   nonClosable: false,
 };
 

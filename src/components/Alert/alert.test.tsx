@@ -5,9 +5,9 @@ import Alert from './alert';
 describe('test Alert Component', () => {
   it('should render a default alert box', () => {
     const alertText = 'This is a default alert';
-    const { getByText } = render(<Alert>{alertText}</Alert>);
+    const { getByText, getByTestId } = render(<Alert>{alertText}</Alert>);
     const content = getByText(alertText);
-    const closeButton = getByText('close');
+    const closeButton = getByTestId('alert-close-btn');
 
     expect(content).toBeInTheDocument();
     expect(content.classList.contains('alert-content')).toBeTruthy();
@@ -15,27 +15,16 @@ describe('test Alert Component', () => {
     expect(closeButton.classList.contains('alert-close-btn')).toBeTruthy();
   });
 
-  it('should close the alert box when close button was clicked', () => {
+  it('should close the alert box when close button was clicked', (done) => {
     const alertText = 'default alert';
-    const { getByText, container } = render(<Alert>{alertText}</Alert>);
-    const closeButton = getByText('close');
+    const { getByTestId, getByText } = render(<Alert>{alertText}</Alert>);
+    const closeButton = getByTestId('alert-close-btn');
+    const alertBox = getByText(alertText);
+    expect(alertBox).toBeInTheDocument();
     fireEvent.click(closeButton);
-
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      <div
-        class="alert-hidden"
-      >
-        <div
-          class="alert-content"
-        >
-          ${alertText}
-        </div>
-        <span
-          class="alert-close-btn"
-        >
-          close
-        </span>
-      </div>
-    `);
+    setTimeout(() => {
+      expect(alertBox).not.toBeInTheDocument();
+      done();
+    }, 300);
   });
 });
