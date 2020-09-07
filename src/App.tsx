@@ -1,9 +1,14 @@
 import React from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import Menu from './components/Menu/menu';
+import Icon from './components/Icon/icon';
+library.add(fas);
 
 function App(): React.ReactElement {
   return (
     <>
+      <Icon icon='coffee' theme='primary' size='10x' />
       <div style={{ width: '700px' }}>
         <Menu>
           <Menu.Item>menu item 1</Menu.Item>

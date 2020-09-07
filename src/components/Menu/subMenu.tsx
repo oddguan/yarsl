@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 
 import { MenuContext } from './menu';
 import { MenuItemProps } from './menuItem';
+import Icon from '../Icon/icon';
+import Transition from '../Transition/transition';
 
 export interface SubMenuProps {
   index?: string;
@@ -27,13 +30,9 @@ const SubMenu: React.FC<SubMenuProps> = ({
     setOpen(!open);
   };
 
-  let timer: number;
   const handleHover = (e: React.MouseEvent, toggle: boolean): void => {
-    window.clearTimeout(timer);
     e.preventDefault();
-    timer = window.setTimeout(() => {
-      setOpen(toggle);
-    }, 300);
+    setOpen(toggle);
   };
 
   const clickEvents = menuContext.mode === 'vertical' ? { onClick: handleClick } : {};
@@ -47,6 +46,8 @@ const SubMenu: React.FC<SubMenuProps> = ({
 
   const classes = classNames('menu-item submenu-item', className, {
     'is-active': index === menuContext.index,
+    'is-opened': open,
+    'is-vertical': menuContext.mode === 'vertical',
   });
 
   const renderChildren = (): React.ReactElement => {
@@ -62,9 +63,11 @@ const SubMenu: React.FC<SubMenuProps> = ({
       }
     });
     return (
-      <ul className={subMenuClasses} data-testid='yarsl-submenu'>
-        {mappedChildren}
-      </ul>
+      <Transition in={open} timeout={300} animation='zoom-in-top'>
+        <ul className={subMenuClasses} data-testid='yarsl-submenu'>
+          {mappedChildren}
+        </ul>
+      </Transition>
     );
   };
 
@@ -72,6 +75,7 @@ const SubMenu: React.FC<SubMenuProps> = ({
     <li key={index} className={classes} {...hoverEvents}>
       <div className='submenu-title' {...clickEvents}>
         {title}
+        <Icon icon={faAngleDown} className='arrow-icon' />
       </div>
       {renderChildren()}
     </li>
