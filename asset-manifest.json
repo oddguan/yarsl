@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/oddguan/yarsl/static/css/main.90636c81.chunk.css",
-    "main.js": "/oddguan/yarsl/main.0e6e9216618dbb1aa326.bundle.js",
-    "main.css.map": "/oddguan/yarsl/static/css/main.90636c81.chunk.css.map",
-    "main.js.map": "/oddguan/yarsl/main.0e6e9216618dbb1aa326.bundle.js.map",
-    "runtime~main.js": "/oddguan/yarsl/runtime~main.0e6e9216618dbb1aa326.bundle.js",
-    "runtime~main.js.map": "/oddguan/yarsl/runtime~main.0e6e9216618dbb1aa326.bundle.js.map",
+    "main.css": "/oddguan/yarsl/static/css/main.5a3834e8.chunk.css",
+    "main.js": "/oddguan/yarsl/main.0358ca9b0b90b0f4ab64.bundle.js",
+    "main.css.map": "/oddguan/yarsl/static/css/main.5a3834e8.chunk.css.map",
+    "main.js.map": "/oddguan/yarsl/main.0358ca9b0b90b0f4ab64.bundle.js.map",
+    "runtime~main.js": "/oddguan/yarsl/runtime~main.0358ca9b0b90b0f4ab64.bundle.js",
+    "runtime~main.js.map": "/oddguan/yarsl/runtime~main.0358ca9b0b90b0f4ab64.bundle.js.map",
     "vendors~main.css": "/oddguan/yarsl/static/css/vendors~main.f8f248a5.chunk.css",
-    "vendors~main.js": "/oddguan/yarsl/vendors~main.0e6e9216618dbb1aa326.bundle.js",
+    "vendors~main.js": "/oddguan/yarsl/vendors~main.0358ca9b0b90b0f4ab64.bundle.js",
     "vendors~main.css.map": "/oddguan/yarsl/static/css/vendors~main.f8f248a5.chunk.css.map",
-    "vendors~main.js.map": "/oddguan/yarsl/vendors~main.0e6e9216618dbb1aa326.bundle.js.map",
+    "vendors~main.js.map": "/oddguan/yarsl/vendors~main.0358ca9b0b90b0f4ab64.bundle.js.map",
     "iframe.html": "/oddguan/yarsl/iframe.html",
-    "precache-manifest.1d99d266425e00cfe76b3355ab92fc45.js": "/oddguan/yarsl/precache-manifest.1d99d266425e00cfe76b3355ab92fc45.js",
+    "precache-manifest.b463995d4fc640e1565f3c3d0668ab14.js": "/oddguan/yarsl/precache-manifest.b463995d4fc640e1565f3c3d0668ab14.js",
     "service-worker.js": "/oddguan/yarsl/service-worker.js",
-    "vendors~main.0e6e9216618dbb1aa326.bundle.js.LICENSE.txt": "/oddguan/yarsl/vendors~main.0e6e9216618dbb1aa326.bundle.js.LICENSE.txt"
+    "vendors~main.0358ca9b0b90b0f4ab64.bundle.js.LICENSE.txt": "/oddguan/yarsl/vendors~main.0358ca9b0b90b0f4ab64.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.0e6e9216618dbb1aa326.bundle.js",
+    "runtime~main.0358ca9b0b90b0f4ab64.bundle.js",
     "static/css/vendors~main.f8f248a5.chunk.css",
-    "vendors~main.0e6e9216618dbb1aa326.bundle.js",
-    "static/css/main.90636c81.chunk.css",
-    "main.0e6e9216618dbb1aa326.bundle.js"
+    "vendors~main.0358ca9b0b90b0f4ab64.bundle.js",
+    "static/css/main.5a3834e8.chunk.css",
+    "main.0358ca9b0b90b0f4ab64.bundle.js"
   ]
 }
