@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Button, { ButtonProps, ButtonType } from './button';
+import Button, { ButtonProps } from './button';
 
 describe('test Button Component', () => {
   it('should render default primary button and listen to onClick event', () => {
     const onClickMock = jest.fn();
     const propsWithOnClickMock: ButtonProps = {
       onClick: onClickMock,
-      btnType: ButtonType.Primary,
+      btnType: 'primary',
     };
     const buttonText = 'Default Button';
     const { getByText } = render(<Button {...propsWithOnClickMock}>{buttonText}</Button>);
@@ -24,7 +24,7 @@ describe('test Button Component', () => {
   it('should render link button using anchor tag', () => {
     const buttonText = 'Link Button';
     const { getByText } = render(
-      <Button btnType={ButtonType.Link} href='https://google.com/'>
+      <Button btnType='link' href='https://google.com/'>
         {buttonText}
       </Button>,
     );
@@ -56,7 +56,7 @@ describe('test Button Component', () => {
       disabled: true,
       onClick: jest.fn(),
       href: 'http://example.com',
-      btnType: ButtonType.Link,
+      btnType: 'link',
     };
     const { getByText } = render(<Button {...disabledLinkButtonProps}>{linkText}</Button>);
     const element = getByText(linkText);
